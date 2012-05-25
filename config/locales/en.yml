@@ -2,4 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  views:
+    post:
+      welcome: 'Welcome MagmaRails Blog'
+      ago: 'ago'
+      delete: 'Delete'
+      edit: 'Edit'
+      back: 'Back'
+      title: 'Title'
+      text: 'Content'
+      create_post: 'Create Post'
+      update_post: 'Update Post'
+      
