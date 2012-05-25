@@ -34,5 +34,6 @@ group :test, :development do
  	gem 'turn', '< 0.8.3'
   gem 'rspec-rails', "~> 2.6"
   gem 'database_cleaner'
+  gem 'factory_girl_rails', "~> 1.2"
 end
 
