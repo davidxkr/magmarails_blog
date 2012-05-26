@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   
+  before_filter :authenticate_user!, :except => [:show, :index]
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user)
   end
 
   def show
@@ -20,7 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
-
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
