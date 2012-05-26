@@ -6,9 +6,31 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+	<body>
+		<div class="navbar navbar-fixed-top">
+	    <div class="navbar-inner">
+	      <div class="container">
+	        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </a>
+	        <a class="brand" href="#"><%=t('views.post.welcome')%></a>
+	        <div class="nav-collapse">
+	          <ul class="nav">
+	            <li><%= link_to "Posts", posts_path %></li>
+							<li><%= link_for_user_login_or_logout %></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	
+		<div class='container'>
+			<div class='row'>
+				<span class='span5'> </span>
+				<span class='span7'>	<%= yield %> </span>
+			</div>
+		</div>
+	</body>
 </html>

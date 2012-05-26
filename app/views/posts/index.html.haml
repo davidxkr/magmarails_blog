@@ -1,14 +1,23 @@
-%h1
-	= t('views.post.welcome')
+- model_class = Post.new.class
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:text)
+      %th= t('views.post.post_by')
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.id
+        %td= link_to post.title, post
+        %td= truncate post.text
+        %td= post.user_name
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(post), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(post), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
 
--@posts.each do |post|
-	%h2
-		= link_to post.title, post
-	%p
-		= time_ago_in_words post.created_at
-		= t('views.post.ago')
-	%p
-		= truncate post.text
-
-%p
-	= link_to t('views.post.new_post'), new_post_path
+= link_to t('.new', :default => t("helpers.links.new")), new_post_path, :class => 'btn btn-primary'
