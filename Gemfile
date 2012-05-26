@@ -33,7 +33,7 @@ gem 'heroku'
 group :test, :development do
   # Pretty printed test output
  	gem 'turn', '< 0.8.3'
-  gem 'rspec-rails', '2.8.1'
+  gem 'rspec-rails', '2.10.1'
   gem 'database_cleaner'
   gem 'factory_girl_rails', "~> 1.2"
 end
