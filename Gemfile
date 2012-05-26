@@ -19,11 +19,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'client_side_validations'
 gem 'haml'
 gem 'pg'
-gem 'devise', '1.4.5'
+gem "dynamic_form"
 gem 'execjs'
-
+gem 'devise'
 gem 'jquery-rails'
 
 # Deploy with Heroku
@@ -32,7 +33,7 @@ gem 'heroku'
 group :test, :development do
   # Pretty printed test output
  	gem 'turn', '< 0.8.3'
-  gem 'rspec-rails', "~> 2.6"
+  gem 'rspec-rails', '2.8.1'
   gem 'database_cleaner'
   gem 'factory_girl_rails', "~> 1.2"
 end
