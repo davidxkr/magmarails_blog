@@ -1,0 +1,14 @@
+%h1
+	= t('views.post.welcome')
+
+-@posts.each do |post|
+	%h2
+		= link_to post.title, post
+	%p
+		= time_ago_in_words post.created_at
+		= t('views.post.ago')
+	%p
+		= truncate post.text
+
+%p
+	= link_to t('views.post.new_post'), new_post_path

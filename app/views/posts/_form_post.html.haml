@@ -1,0 +1,10 @@
+= form_for @post do |f|
+	%p
+		= f.label :title, t('views.post.title')
+		%br
+		= f.text_field :title
+	%p
+		= f.label :text, t('views.post.text')
+		%br
+		= f.text_area :text
+	= f.submit @post.new_record? ?  t('views.post.create_post') : t('views.post.update_post')

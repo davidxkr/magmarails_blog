@@ -1,0 +1,13 @@
+%h1
+	= @post.title
+%p
+	= @post.text
+%p
+	= render :partial => 'comment', :collection => @post.comments
+%p
+	= render :partial => 'form_comment'
+= link_to t('views.post.back'), posts_path
+|
+= link_to t('views.post.edit'), edit_post_path
+|
+= link_to t('views.post.delete'), @post, :method => :delete, :confirm => t('views.post.are_you_sure')

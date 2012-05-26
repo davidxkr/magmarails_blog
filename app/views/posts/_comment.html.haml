@@ -1,0 +1,6 @@
+%p
+	= comment.content
+%p
+	= time_ago_in_words comment.created_at
+%p
+	= link_to t('views.post.delete_comment'), [@post, comment], :method => :delete, :confirm => t('views.post.are_you_sure')

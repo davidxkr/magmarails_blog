@@ -13,4 +13,6 @@ en:
       text: 'Content'
       create_post: 'Create Post'
       update_post: 'Update Post'
+      create_comment: 'Create comment'
+      are_you_sure: 'Are you sure?'
       
