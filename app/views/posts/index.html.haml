@@ -7,7 +7,7 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:title)
       %th= model_class.human_attribute_name(:text)
-      %th= t('views.post.post_by')
+      %th= t('views.post.author')
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @posts.each do |post|
