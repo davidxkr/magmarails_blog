@@ -4,6 +4,7 @@ FactoryGirl.define do
   factory :comment do
     post_id 1
     content "MyText"
+    user_name 'My name'
   end
 end
 
